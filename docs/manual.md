@@ -66,7 +66,7 @@ Send one sequencer's pitch CV to three VCOs so they play the same notes. Detune 
 
 ### Performance mute
 
-<img src="images/patch-3-mute.svg" alt="A drum voice patched into Bank A and taken out of Bank B to a mixer; the button turns the signal on and off" width="360">
+<img src="images/patch-3-mute.svg" alt="A drum voice patched into Bank A and taken out of Bank B to a mixer. The button turns the signal on and off" width="360">
 
 Patch a signal into Bank A and take it out of Bank B, as in [Using the button as a performance switch](#using-the-button-as-a-performance-switch), then play the button to drop the part in and out of the mix. It's good for drums, gates, and modulation.
 

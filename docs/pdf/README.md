@@ -11,7 +11,7 @@ The build tool lives in [schenktronics-docs-tools](https://github.com/Schenktron
 
 ## Automatic builds
 
-The [Build PDFs workflow](../../.github/workflows/pdf.yml) rebuilds the PDFs whenever the docs, their images or `config.json` change on `master`, and commits the new PDFs back. After you push a docs change, wait a minute and then `git pull` to get the rebuilt PDFs.
+The [Build PDFs workflow](../../.github/workflows/pdf.yml) rebuilds the PDFs whenever the docs, their images, or `config.json` change on `master`, and commits the new PDFs back. After you push a docs change, wait a minute and then `git pull` to get the rebuilt PDFs.
 
 After an update to schenktronics-docs-tools, run the workflow by hand from the repo's **Actions** tab to rebuild with the new version.
 

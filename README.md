@@ -5,7 +5,7 @@
 
 # ST-01 Multiple
 
-A 3HP Eurorack passive multiple from **Schenktronics**: two banks of four jacks, and a latching button that links them into one eight-jack multiple. Push the button in time with the music and it doubles as a performance mute. No power needed.
+A 3HP Eurorack passive multiple from **Schenktronics**: two banks of four jacks, and a latching button that links them into one eight-jack multiple. The button doubles as a performance mute. No power needed.
 
 <img src="docs/images/outline-front.svg" alt="Multiple front panel" width="120">
 
@@ -34,7 +34,7 @@ hardware/
     Multiple.kicad_pcb           PCB layout
     Multiple.step                3D model
     BOM.ods                      Original BOM spreadsheet
-  panel/                      Faceplate (KiCad 10, made as an aluminium PCB)
+  panel/                      Faceplate (KiCad 10, made as an aluminum PCB)
     MultipleFaceplate.kicad_pcb  Faceplate layout
     MultipleFaceplate.step       3D model
 docs/                         Manual, assembly guide, BOM, images
@@ -47,7 +47,11 @@ docs/                         Manual, assembly guide, BOM, images
 | Board | Size | Layers | Thickness | Notes |
 |-------|------|--------|-----------|-------|
 | Main PCB | 15 x 100 mm | 2 | 1.6 mm | Standard green is fine |
-| Faceplate | 15 x 128.5 mm | 1 | 1.6 mm | Aluminium PCB, white solder mask, black silkscreen. Only the front copper layer is used, so FR4 works too. |
+| Faceplate | 15 x 128.5 mm | 1 | 1.6 mm | Aluminum PCB, white solder mask, black silkscreen. Only the front copper layer is used, so FR4 works too. |
+
+## Sourcing your own parts
+
+The [BOM](docs/BOM.md) lists every part. The jack pads are oval so the board can also take panel-mount style jacks, which may be easier to source.
 
 ## License
 

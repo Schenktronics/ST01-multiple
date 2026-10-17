@@ -68,7 +68,7 @@ python3 docs/drawings/make_patch_svgs.py
 
 ## Outline drawings
 
-`outline-front.svg`, `outline-side.svg`, one `outline-iso-{top,bottom}-{left,right}.svg` per corner, and `outline-bare-parts.svg` (the panel and bare PCB side by side, for the assembly guide's "before you start" shot) are real projections straight from [`ST01_Multiple.step`](../../hardware/ST01_Multiple.step) in `hardware/`, not diagrams. They replace the old product photos in the README, manual, and assembly guide. All four isometric corners are generated every run so there's always a fresh set to pick a hero shot from; `outline-iso-top-left.svg` is the one currently used.
+`outline-front.svg`, `outline-side.svg`, one `outline-iso-{top,bottom}-{left,right}.svg` per corner, and `outline-bare-parts.svg` (the panel and bare PCB side by side, for the assembly guide's "before you start" shot) are real projections straight from [`ST01_Multiple.step`](../../hardware/ST01_Multiple.step) in `hardware/`, not diagrams. They replace the old product photos in the README, manual, and assembly guide. All four isometric corners are generated every run so there's always a fresh set to pick a hero shot from. `outline-iso-top-left.svg` is the one currently used.
 
 **The generator for these doesn't live in this repo.** Unlike the three scripts above, it needs no product-specific logic (point it at any product's STEP files and it works unchanged), so it's kept as one shared tool in the private `schenktronics-business` repo (`claude/skills/schenktronics-product-docs/assets/drawings/make_outline_svg.py`) rather than forked into every product. Regenerate from this repo's root:
 
