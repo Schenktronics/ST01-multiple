@@ -3,6 +3,8 @@
   "pcbVersion": "v1.1",
   "repo": "Schenktronics/ST01-multiple",
   "branch": "master",
+  "qrUrl": "https://schenktronics.com/docs/st-01/",
+  "officialUrl": "schenktronics.com/docs/st-01",
   "docsDir": "../docs",
   "outDir": "../docs/pdf",
   "documents": [
