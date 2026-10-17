@@ -2,8 +2,6 @@
 
 This kit takes about 20-30 minutes and 30 solder joints. There are no polarized parts, and nothing to get backwards except which side of the board the parts go on, so it makes a good first Eurorack build.
 
-**Prefer to watch?** There's a video of the whole build: [Watch me assemble a switched passive multiples module!](https://www.youtube.com/watch?v=nGc3uMlrRig)
-
 <img src="images/outline-bare-parts.svg" alt="The faceplate and the bare PCB, before assembly" width="260">
 
 ## What you need

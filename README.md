@@ -64,7 +64,4 @@ The Schenktronics name and logo are trademarks of Schenktronics LLC and are not 
 
 - Shop: <https://schenktronics.com/product/st-01/>
 - Docs page: <https://schenktronics.com/docs/st-01/>
-- Tindie: <https://www.tindie.com/products/schenktronics/passive-multiple/>
-- ModularGrid: <https://modulargrid.net/e/schenktronics-multiple>
-- Build video: <https://www.youtube.com/watch?v=nGc3uMlrRig>
 - Website: <https://schenktronics.com>
