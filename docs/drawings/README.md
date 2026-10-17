@@ -23,7 +23,7 @@ python3 docs/drawings/make_panel_svg.py
 | From the KiCad file | Used for |
 |---------------------|----------|
 | `Edge.Cuts` lines | Panel outline |
-| Mounting-hole footprints and their drill sizes | Jacks (Ø6.0), the link button (Ø6.5) and the rack screw holes |
+| Mounting-hole footprints and their drill sizes | Jacks (6.0 mm), the link button (6.5 mm), and the rack screw holes |
 | `F.SilkS` lines, circles and text | Printed lines, the switch symbol and the labels |
 | The `SchentronicsLogo` footprint | The logo, read as its silkscreen polygons and placed at the footprint's position and rotation |
 
@@ -60,7 +60,7 @@ def pitch(data):
     ...
 ```
 
-Jacks are named by bank and position from the top: `A1`–`A4` and `B1`–`B4`. Sources go on the left, destinations on the right. Pass `color=BLUE` to draw a second signal. To add an example, write a new function, add it to the list in `main()`, and run:
+Jacks are named by bank and position from the top: `A1`-`A4` and `B1`-`B4`. Sources go on the left, destinations on the right. Pass `color=BLUE` to draw a second signal. To add an example, write a new function, add it to the list in `main()`, and run:
 
 ```sh
 python3 docs/drawings/make_patch_svgs.py
@@ -68,9 +68,9 @@ python3 docs/drawings/make_patch_svgs.py
 
 ## Outline drawings
 
-`outline-front.svg`, `outline-side.svg`, one `outline-iso-{top,bottom}-{left,right}.svg` per corner, and `outline-bare-parts.svg` (the panel and bare PCB side by side, for the assembly guide's "before you start" shot) are real projections straight from [`ST01_Multiple.step`](../../hardware/ST01_Multiple.step) in `hardware/` — not diagrams. They replace the old product photos in the README, manual and assembly guide. All four isometric corners are generated every run so there's always a fresh set to pick a hero shot from; `outline-iso-top-left.svg` is the one currently used.
+`outline-front.svg`, `outline-side.svg`, one `outline-iso-{top,bottom}-{left,right}.svg` per corner, and `outline-bare-parts.svg` (the panel and bare PCB side by side, for the assembly guide's "before you start" shot) are real projections straight from [`ST01_Multiple.step`](../../hardware/ST01_Multiple.step) in `hardware/`, not diagrams. They replace the old product photos in the README, manual, and assembly guide. All four isometric corners are generated every run so there's always a fresh set to pick a hero shot from; `outline-iso-top-left.svg` is the one currently used.
 
-**The generator for these doesn't live in this repo.** Unlike the three scripts above, it needs no product-specific logic — point it at any product's STEP files and it works unchanged — so it's kept as one shared tool in the private `schenktronics-business` repo (`claude/skills/schenktronics-product-docs/assets/drawings/make_outline_svg.py`) rather than forked into every product. Regenerate from this repo's root:
+**The generator for these doesn't live in this repo.** Unlike the three scripts above, it needs no product-specific logic (point it at any product's STEP files and it works unchanged), so it's kept as one shared tool in the private `schenktronics-business` repo (`claude/skills/schenktronics-product-docs/assets/drawings/make_outline_svg.py`) rather than forked into every product. Regenerate from this repo's root:
 
 ```sh
 pip install cadquery  # no FreeCAD or other CAD tooling needed
@@ -79,9 +79,9 @@ python3 ~/Products/schenktronics-business/claude/skills/schenktronics-product-do
   --panel hardware/panel/MultipleFaceplate.step \
   --board hardware/multiple/Multiple.step \
   --out docs/images \
-  --product "Passive Multiple"
+  --product "ST-01 Multiple"
 ```
 
 (or add a view name at the end, e.g. `... outline-front.svg`, to regenerate just that one)
 
-**This is slow, and not predictably so, especially the front view — read the module docstring in that script before touching it.** Short version: a straight-on view down an axis where many cylindrical parts line up end-on (every jack here, viewed from the front) is a degenerate case for exact-BRep HLR, both slow (the orthographic version of this view took **24 minutes**, against about a **minute each** for the side and isometric views of the same assembly) and prone to rendering a different jack inconsistently on every attempt. The fix that worked — a perspective projection with its apex centered on the model, not tilting the orthographic direction — is explained in full in the script itself, along with everything else worth knowing before changing a view (the explicit HLR axis, scientific-notation coordinate parsing, per-view subprocess isolation, the simplify/crop pass). That script is the one copy serving every product, so fixes and lessons belong there, not duplicated into each product repo's own docs.
+**This is slow, and not predictably so, especially the front view. Read the module docstring in that script before touching it.** Short version: a straight-on view down an axis where many cylindrical parts line up end-on (every jack here, viewed from the front) is a degenerate case for exact-BRep HLR, both slow (the orthographic version of this view took **24 minutes**, against about a **minute each** for the side and isometric views of the same assembly) and prone to rendering a different jack inconsistently on every attempt. The fix that worked, a perspective projection with its apex centered on the model rather than tilting the orthographic direction, is explained in full in the script itself, along with everything else worth knowing before changing a view (the explicit HLR axis, scientific-notation coordinate parsing, per-view subprocess isolation, the simplify/crop pass). That script is the one copy serving every product, so fixes and lessons belong there, not duplicated into each product repo's own docs.

@@ -217,14 +217,14 @@ def annotated(outline, holes, *silk):
              f"dominant-baseline='central'>in = linked, out = split</text>"]
     pad = 4
     return svg((x0 - pad, y0 - pad, (x1 - x0) + 46 + pad, (y1 - y0) + 2 * pad), body,
-               "Passive Multiple front panel")
+               "ST-01 Multiple front panel")
 
 
 def plain(outline, holes, *silk):
     x0, y0, x1, y1 = outline
     pad = 1
     return svg((x0 - pad, y0 - pad, (x1 - x0) + 2 * pad, (y1 - y0) + 2 * pad), panel_body(outline, holes, *silk),
-               "Passive Multiple front panel")
+               "ST-01 Multiple front panel")
 
 
 def main():

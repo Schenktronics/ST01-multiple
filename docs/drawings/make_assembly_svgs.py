@@ -11,7 +11,7 @@ import math
 import re
 from pathlib import Path
 
-from make_panel_svg import FONT, INK, RED, svg
+from make_panel_svg import FONT, INK, RED, at_xyr, first, read_sexp, svg, tagged
 
 ROOT = Path(__file__).resolve().parents[2]
 PCB = ROOT / "hardware" / "multiple" / "Multiple.kicad_pcb"
@@ -25,42 +25,50 @@ TINT = "#fbe3e2"
 
 # ---------------------------------------------------------------- parsing
 
+def xy(node, name):
+    return tuple(float(v) for v in first(node, name)[1:3])
+
+
 def parse(path):
-    s = path.read_text()
-    edges = [tuple(map(float, m)) for m in re.findall(
-        r"\(gr_line \(start ([\d.]+) ([\d.]+)\) \(end ([\d.]+) ([\d.]+)\) \(layer Edge\.Cuts\)", s)]
+    root = read_sexp(path.read_text())
+    edges = [xy(g, "start") + xy(g, "end") for g in tagged(root, "gr_line")
+             if first(g, "layer")[1] == "Edge.Cuts"]
     xs = [v for e in edges for v in (e[0], e[2])]
     ys = [v for e in edges for v in (e[1], e[3])]
     outline = (min(xs), min(ys), max(xs), max(ys))
 
     parts = []
-    for block in re.findall(r"\n  \(module .*?\n  \)", s, re.S):
-        at = re.search(r"\n    \(at ([\d.]+) ([\d.]+)(?: ([\d.-]+))?\)", block)
-        mx, my = float(at[1]), float(at[2])
-        a = math.radians(float(at[3] or 0))
+    for fp in tagged(root, "footprint"):
+        ref = next(p for p in tagged(fp, "property") if p[1] == "Reference")
+        if not re.fullmatch(r"(J|SW)\d+", ref[2]):
+            continue  # logos and license badges, not parts to fit
+        mx, my, rot = at_xyr(fp)
+        a = math.radians(rot)
 
         def place(x, y):
             # KiCad rotates footprints counter-clockwise on a y-down board.
             return (mx + x * math.cos(a) + y * math.sin(a), my - x * math.sin(a) + y * math.cos(a))
 
-        ref = re.search(r"fp_text reference (\S+) \(at ([\d.-]+) ([\d.-]+)", block)
-        part = dict(ref=ref[1], at=(mx, my), label_at=place(float(ref[2]), float(ref[3])), lines=[], circles=[], pads=[])
-        for m in re.findall(r"\(fp_line \(start ([\d.-]+) ([\d.-]+)\) \(end ([\d.-]+) ([\d.-]+)\) \(layer F\.SilkS\)", block):
-            x1, y1, x2, y2 = map(float, m)
-            part["lines"].append((*place(x1, y1), *place(x2, y2)))
-        for m in re.findall(r"\(fp_circle \(center ([\d.-]+) ([\d.-]+)\) \(end ([\d.-]+) ([\d.-]+)\) \(layer F\.SilkS\)", block):
-            cx, cy, ex, ey = map(float, m)
-            part["circles"].append((*place(cx, cy), math.hypot(ex - cx, ey - cy)))
-        for m in re.finditer(r"\(pad (\S+) (\S+) (\S+) \(at ([\d.-]+) ([\d.-]+)(?: ([\d.-]+))?\) \(size ([\d.]+) ([\d.]+)\)"
-                             r"(?: \(drill (?:oval )?([\d.]+)(?: ([\d.]+))?\))?", block):
-            name, kind, shape = m[1].strip('"'), m[2], m[3]
-            px, py = place(float(m[4]), float(m[5]))
-            w, h = float(m[7]), float(m[8])
-            dw = float(m[9] or 0)
-            dh = float(m[10] or m[9] or 0)
-            if m[6] and float(m[6]) % 180 == 90:
-                # Pad angles in KiCad 5 are absolute.
+        rx, ry, _ = at_xyr(ref)
+        part = dict(ref=ref[2], at=(mx, my), label_at=place(rx, ry), lines=[], circles=[], pads=[])
+        for g in tagged(fp, "fp_line"):
+            if first(g, "layer")[1] == "F.SilkS":
+                part["lines"].append((*place(*xy(g, "start")), *place(*xy(g, "end"))))
+        for g in tagged(fp, "fp_circle"):
+            if first(g, "layer")[1] == "F.SilkS":
+                (cx, cy), (ex, ey) = xy(g, "center"), xy(g, "end")
+                part["circles"].append((*place(cx, cy), math.hypot(ex - cx, ey - cy)))
+        for p in tagged(fp, "pad"):
+            name, kind, shape = p[1], p[2], p[3]
+            px, py, pa = at_xyr(p)
+            w, h = (float(v) for v in first(p, "size")[1:3])
+            drill = [v for v in (first(p, "drill") or [])[1:] if v != "oval"]
+            dw = float(drill[0]) if drill else 0.0
+            dh = float(drill[1]) if len(drill) > 1 else dw
+            if pa % 180 == 90:
+                # Pad angles are absolute: they include the footprint's rotation.
                 w, h, dw, dh = h, w, dh, dw
+            px, py = place(px, py)
             part["pads"].append(dict(name=name, npth=kind == "np_thru_hole", shape=shape,
                                      x=px, y=py, w=w, h=h, dw=dw, dh=dh))
         parts.append(part)
@@ -266,7 +274,7 @@ def fig_faceplate(outline, parts):
     body.append(text(lx, nut_y + 1.1, "Nuts", 2.6, "bold"))
     body.append(text(lx, nut_y + 4.3, "finger-tight first", 2.2, color=GREY))
     body.append(text(lx, panel_y + 0.8, "Faceplate", 2.6, "bold"))
-    body.append(text(lx, panel_y + 4, "“Multiple” end over J1", 2.2, color=GREY))
+    body.append(text(lx, panel_y + 4, "\"Multiple\" end over J1", 2.2, color=GREY))
     body.append(text(lx, body_top + 3, "Jacks", 2.6, "bold"))
     body.append(text(lx, body_top + 6.2, "not soldered yet", 2.2, color=GREY))
     body.append(text(lx, pcb_y + 0.8, "PCB", 2.6, "bold"))
