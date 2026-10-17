@@ -1,10 +1,10 @@
 {
-  "product": "Passive Multiple",
-  "pcbVersion": "v1.0",
+  "product": "ST-01 Multiple",
+  "pcbVersion": "v1.1",
   "repo": "Schenktronics/ST01-multiple",
   "branch": "master",
   "documents": [
-    { "src": "manual.md", "out": "passive-multiple-manual.pdf", "title": "User Manual" },
-    { "src": "assembly-guide.md", "out": "passive-multiple-assembly-guide.pdf", "title": "Assembly Guide" }
+    { "src": "manual.md", "out": "ST-01_Multiple_User_Manual.pdf", "title": "User Manual" },
+    { "src": "assembly-guide.md", "out": "ST-01_Multiple_Assembly_Guide.pdf", "title": "Assembly Guide" }
   ]
 }

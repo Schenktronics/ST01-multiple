@@ -1,6 +1,6 @@
-# Passive Multiple — Assembly Guide
+# ST-01 Multiple: Assembly Guide
 
-Building this kit takes about 20–30 minutes and needs 30 solder joints. It is a good first Eurorack kit.
+This kit takes about 20-30 minutes and 30 solder joints. There are no polarized parts, and nothing to get backwards except which side of the board the parts go on, so it makes a good first Eurorack build.
 
 **Prefer to watch?** There's a video of the whole build: [Watch me assemble a switched passive multiples module!](https://www.youtube.com/watch?v=nGc3uMlrRig)
 
@@ -12,80 +12,89 @@ Building this kit takes about 20–30 minutes and needs 30 solder joints. It is 
 
 Check your kit against this list before you start (full details in the [BOM](BOM.md)):
 
-- [ ] 1 × main PCB
-- [ ] 1 × faceplate
-- [ ] 8 × 3.5 mm jacks with nuts
-- [ ] 1 × latching pushbutton switch
-- [ ] 1 × button cap
+- [ ] 1 x main PCB
+- [ ] 1 x faceplate
+- [ ] 8 x 3.5 mm jacks with nuts
+- [ ] 1 x latching pushbutton switch
+- [ ] 1 x button cap
 
 ### Tools
 
-- Soldering iron (about 330–360 °C for leaded solder)
+- Soldering iron (about 330-360 °C for leaded solder)
 - Solder
-- Flush cutters
 - Multimeter with a continuity (beep) mode
-- Nut driver or wrench for the jack nuts (optional, but it avoids scratching the panel)
+- Small pliers (optional, for squaring up the jacks)
+- Nut driver or wrench for the jack nuts (optional, but less likely to scratch the panel than pliers)
 
 ## Before you start
 
-- The jacks and switch go on the **front** of the PCB, which is the side with the part outlines (J1–J8, SW1). The side printed "Passive Multiple v1.0 / schenktronics.com" is the back, and you solder there.
-- You solder the switch first. **Do not solder the jacks until the faceplate is fitted.** The faceplate holds the jacks in line, and fitting it lets you center the button in its panel hole.
+- The jacks and switch go on the **front** of the PCB, the side with the part outlines (J1-J8, SW1). The back is printed "ST-01 v1.1 / Passive Multiple" and "schenktronics.com", and that's the side you solder on.
+- The switch gets soldered first. **Don't solder the jacks until the faceplate is on.** The faceplate holds the jacks in line, and it's how you center the button in its hole.
 
-## Step 1 — Solder the switch
+### First time soldering?
 
-1. Insert the switch's six pins into the 2 × 3 SW1 footprint from the front of the PCB. It works either way round, because the footprint is wired symmetrically.
-2. Hold it flat against the PCB and square to the board, then solder one pin from the back.
-3. Check that the switch still sits flat and straight. If it doesn't, reheat that pin and adjust it.
-4. Solder the other five pins. Work quickly so you don't overheat the plastic switch body.
-5. Trim the leads with flush cutters.
+You only need the basics for this kit:
+
+- Touch the iron to the pad and the pin at the same time, then feed solder into the joint, not onto the iron tip. A second or two is usually enough.
+- A good joint is shiny and shaped like a small cone around the pin. A dull, lumpy blob usually means the pad didn't get hot enough; reheat it, use some flux, and add a touch more solder if necessary.
+- Keep the tip clean and lightly tinned. Wipe it on a damp sponge or brass wool between joints.
+- Remember that solder flows toward the heat.
+
+## Step 1: Solder the switch
+
+1. Push the switch's six pins into the SW1 footprint from the front of the PCB. It fits either way round: the footprint is wired symmetrically.
+2. Hold it flat against the board and square to it, then solder one pin from the back.
+3. Check that the switch is still flat and straight. If it isn't, reheat that pin and straighten it.
+4. Solder the other five pins. Don't linger on them, so the plastic body doesn't overheat.
 
 <img src="images/assembly-1-switch.svg" alt="Front of the PCB with the SW1 position highlighted, and the back of the PCB with the six switch pins highlighted" width="640">
 
-## Step 2 — Fit the button cap
+## Step 2: Fit the button cap
 
-Press the button cap onto the switch plunger. Press the button a few times to check that it latches in and releases.
+Press the cap onto the switch plunger, then push the button a few times to check that it latches in and pops back out.
 
 <img src="images/assembly-2-cap.svg" alt="Side view of the button cap being pressed down onto the switch plunger" width="360">
 
-## Step 3 — Fit the jacks and faceplate
+## Step 3: Fit the jacks and faceplate
 
-1. Insert all eight jacks into J1–J8 from the front of the PCB. Make sure each jack sits flat, with all three legs through their pads. Do not solder them yet.
-2. Remove the nuts from the jacks.
-3. Lower the faceplate over the jacks. The "Multiple" label goes at the top, next to J1, and the button goes through the larger hole between the two banks.
-4. Put the nuts back on and tighten them **finger-tight** for now.
-5. Shift the PCB until the button is **centered in its panel hole** and presses in and out without rubbing. The jack legs have a little play in their pads, which gives you room to adjust.
-6. Tighten the nuts snugly. Do not overtighten them, because that can crack the jack threads or mark the panel. Then check the button again.
+1. Take the nuts off the jacks and set them aside.
+2. Push all eight jacks into J1-J8 from the front of the PCB. Make sure each one sits flat with all three legs through their holes. Don't solder them yet.
+3. Lower the faceplate over the jacks. The "Multiple" label goes at the top, next to J1, and the button goes through the bigger hole between the two banks.
+4. Rubber bands or small spring clips can be helpful to hold the faceplate and the board together while you work.
+5. Put the nuts back on, finger-tight for now.
+6. Shift the PCB until the button is **centered in its hole** and moves in and out without rubbing. The jack legs have a little play in their holes, which gives you room to adjust.
+7. Snug the nuts down, and check the button again. Don't overtighten: it can strip the jack threads or mark the panel.
 
 <img src="images/assembly-3-faceplate.svg" alt="Exploded side view: jacks and button on the PCB, the faceplate above them, and the nuts on top" width="720">
 
-## Step 4 — Solder the jacks
+## Step 4: Solder the jacks
 
-Turn the assembly over and solder from the back of the PCB.
+Turn the whole thing over and solder from the back of the PCB.
 
-1. On each jack, solder only the square pad. Then check again that the button is centered and moves freely. If it doesn't, reheat those joints and adjust.
-2. Solder the remaining two pads on each jack (24 jack joints in total).
-3. Trim any long leads with flush cutters.
+1. On each jack, solder only the square pad. Then check again that the button is centered and moves freely. If it doesn't, reheat those eight joints and nudge the board.
+2. Use a small pair of pliers to rotate the jacks as necessary to align them squarely with each other. This step is optional, but a nice touch.
+3. Solder the other two pads on each jack (24 jack joints in all).
 
 <img src="images/assembly-4-jacks.svg" alt="Back of the PCB: the eight square pads to tack first are filled red, and the other sixteen jack pads are outlined in red" width="640">
 
-Inspect every joint. Each one should be shiny and cone-shaped, with no bridges between neighboring pads.
+Look over every joint before moving on. Each should be shiny and cone-shaped, with no solder bridging neighboring pads.
 
-## Step 5 — Test
+## Step 5: Test
 
-Test with a multimeter in continuity mode. No power is needed. The "tip" contact is the one that touches the tip of a plugged-in cable; testing is easiest with two patch cables plugged in, probing their plugs.
+Set your multimeter to continuity mode. No power is needed. The tip contact is the one that touches the tip of a plugged-in cable; the easiest way to test is to plug in two patch cables and probe their plugs.
 
 | Test | Expected result |
 |------|-----------------|
-| Sleeve of any jack ↔ sleeve of every other jack | Beep |
-| Tip ↔ tip, within Bank A (top four) | Beep |
-| Tip ↔ tip, within Bank B (bottom four) | Beep |
-| Tip of Bank A ↔ tip of Bank B, button **in** | Beep (linked) |
-| Tip of Bank A ↔ tip of Bank B, button **out** | No beep (split) |
-| Tip ↔ sleeve, any jack, either button position | **No beep.** A beep means a short. Check for solder bridges. |
+| Sleeve of any jack <-> sleeve of every other jack | Beep |
+| Tip <-> tip, within Bank A (top four) | Beep |
+| Tip <-> tip, within Bank B (bottom four) | Beep |
+| Tip of Bank A <-> tip of Bank B, button **in** | Beep (linked) |
+| Tip of Bank A <-> tip of Bank B, button **out** | No beep (split) |
+| Tip <-> sleeve, any jack, either button position | **No beep.** A beep means a short: look for a solder bridge. |
 
-## Step 6 — Install
+## Step 6: Install
 
-Install the module in your case with two M3 screws. Usage details are in the [User Manual](manual.md).
+Mount the module in your case with two M3 screws. How to use it is in the [User Manual](manual.md).
 
 <img src="images/outline-iso-top-left.svg" alt="Assembled module, isometric view" width="160">
 
@@ -93,7 +102,7 @@ Install the module in your case with two M3 screws. Usage details are in the [Us
 
 | Symptom | Likely cause |
 |---------|--------------|
-| One jack is dead | That jack has a cold or missing solder joint. Reflow its tip and sleeve legs. |
-| The banks never link, or never split, when the button is pressed | There is a bad joint on the switch, or the switch is not fully seated. Reflow the six switch pins. |
-| The signal is shorted to ground | There is a solder bridge between a tip pad and a sleeve pad. |
-| The button rubs or sticks | The button is not centered in its panel hole. Loosen the nuts, reheat the jack joints, and shift the PCB until it is centered. |
+| One jack is dead | A cold or missing joint on that jack. Reflow all three of its legs. |
+| The banks never link, or never split | A bad joint on the switch, or the switch isn't fully seated. Reflow the six switch pins. |
+| A signal is shorted to ground | A solder bridge between a tip pad and a sleeve pad. |
+| The button rubs or sticks | It isn't centered in its hole. Loosen the nuts, reheat the jack joints, and shift the board until it's centered. |

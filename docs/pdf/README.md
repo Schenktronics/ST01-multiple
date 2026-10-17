@@ -2,12 +2,12 @@
 
 Printable versions of the docs:
 
-- [User Manual (PDF)](passive-multiple-manual.pdf)
-- [Assembly Guide (PDF)](passive-multiple-assembly-guide.pdf)
+- [User Manual (PDF)](ST-01_Multiple_User_Manual.pdf)
+- [Assembly Guide (PDF)](ST-01_Multiple_Assembly_Guide.pdf)
 
 These are built from [`../manual.md`](../manual.md) and [`../assembly-guide.md`](../assembly-guide.md). **Don't edit the PDFs by hand.** Edit the Markdown instead.
 
-The build tool lives in [schenktronics-docs-tools](https://github.com/Schenktronics/schenktronics-docs-tools), so this repo only holds its settings, in [`config.json`](config.json): the product name, PCB version and which documents to build.
+The build tool lives in [schenktronics-docs-tools](https://github.com/Schenktronics/schenktronics-docs-tools), so this repo only holds its settings, in [`config.json`](config.json): the product name, PCB version, and which documents to build.
 
 ## Automatic builds
 
