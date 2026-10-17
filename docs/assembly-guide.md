@@ -79,6 +79,8 @@ Turn the whole thing over and solder from the back of the PCB.
 2. Solder the other two pads on each jack (24 jack joints in all).
 3. Snug the nuts down. Don't overtighten: it can strip the jack threads or damage the panel.
 
+> **Using panel-mount style jacks?** The oval pads also take jacks like the CUI MJ-3507. Their tip and switch pins go into the board, but the sleeve is a solder lug on the jack, not a pin. Tack the tip pin instead of the square pad, then solder a short wire from each jack's sleeve lug to its square pad. Without the wire, the jack has no ground.
+
 <img src="images/assembly-4-jacks.svg" alt="Back of the PCB: the eight square pads to tack first are filled red, and the other sixteen jack pads are outlined in red" width="640">
 
 Look over every joint before moving on. Each should be shiny and cone-shaped, with no solder bridging neighboring pads.
