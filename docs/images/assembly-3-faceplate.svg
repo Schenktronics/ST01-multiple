@@ -122,14 +122,14 @@
 <line x1='111.00' y1='37.80' x2='111.00' y2='45.70' stroke='#1a1a1a' stroke-width='0.3' marker-end='url(#arr)'/>
 <line x1='66.0' y1='32' x2='66.0' y2='41.5' stroke='#d9302c' stroke-width='0.3' stroke-dasharray='1 0.8'/>
 <text x='133.25' y='27.10' font-family='DejaVu Sans, Helvetica, Arial, sans-serif' font-size='2.6' font-weight='bold' fill='#1a1a1a' text-anchor='start' dominant-baseline='central'>Nuts</text>
-<text x='133.25' y='30.30' font-family='DejaVu Sans, Helvetica, Arial, sans-serif' font-size='2.2' font-weight='normal' fill='#888' text-anchor='start' dominant-baseline='central'>finger-tight first</text>
+<text x='133.25' y='30.30' font-family='DejaVu Sans, Helvetica, Arial, sans-serif' font-size='2.2' font-weight='normal' fill='#888' text-anchor='start' dominant-baseline='central'>hand-tighten first</text>
 <text x='133.25' y='35.80' font-family='DejaVu Sans, Helvetica, Arial, sans-serif' font-size='2.6' font-weight='bold' fill='#1a1a1a' text-anchor='start' dominant-baseline='central'>Faceplate</text>
 <text x='133.25' y='39.00' font-family='DejaVu Sans, Helvetica, Arial, sans-serif' font-size='2.2' font-weight='normal' fill='#888' text-anchor='start' dominant-baseline='central'>"Multiple" end over J1</text>
 <text x='133.25' y='54.00' font-family='DejaVu Sans, Helvetica, Arial, sans-serif' font-size='2.6' font-weight='bold' fill='#1a1a1a' text-anchor='start' dominant-baseline='central'>Jacks</text>
 <text x='133.25' y='57.20' font-family='DejaVu Sans, Helvetica, Arial, sans-serif' font-size='2.2' font-weight='normal' fill='#888' text-anchor='start' dominant-baseline='central'>not soldered yet</text>
 <text x='133.25' y='60.80' font-family='DejaVu Sans, Helvetica, Arial, sans-serif' font-size='2.6' font-weight='bold' fill='#1a1a1a' text-anchor='start' dominant-baseline='central'>PCB</text>
 <text x='66.00' y='67.50' font-family='DejaVu Sans, Helvetica, Arial, sans-serif' font-size='2.6' font-weight='bold' fill='#d9302c' text-anchor='middle' dominant-baseline='central'>Center the button in its hole,</text>
-<text x='66.00' y='70.70' font-family='DejaVu Sans, Helvetica, Arial, sans-serif' font-size='2.2' font-weight='normal' fill='#888' text-anchor='middle' dominant-baseline='central'>then tighten the nuts</text>
+<text x='66.00' y='70.70' font-family='DejaVu Sans, Helvetica, Arial, sans-serif' font-size='2.2' font-weight='normal' fill='#888' text-anchor='middle' dominant-baseline='central'>solder, then tighten the nuts</text>
 <text x='16.00' y='67.50' font-family='DejaVu Sans, Helvetica, Arial, sans-serif' font-size='2' font-weight='normal' fill='#888' text-anchor='start' dominant-baseline='central'>J1 end</text>
 <text x='116.00' y='67.50' font-family='DejaVu Sans, Helvetica, Arial, sans-serif' font-size='2' font-weight='normal' fill='#888' text-anchor='end' dominant-baseline='central'>J8 end</text>
 <text x='1.75' y='75.00' font-family='DejaVu Sans, Helvetica, Arial, sans-serif' font-size='2' font-weight='normal' fill='#888' text-anchor='start' dominant-baseline='central'>Side view, not to scale vertically</text>

@@ -61,9 +61,9 @@ Press the cap onto the switch plunger, then push the button a few times to check
 2. Push all eight jacks into J1-J8 from the front of the PCB. Make sure each one sits flat with all three legs through their holes. Don't solder them yet.
 3. Lower the faceplate over the jacks. The "Multiple" label goes at the top, next to J1, and the button goes through the bigger hole between the two banks.
 4. Rubber bands or small spring clips can be helpful to hold the faceplate and the board together while you work.
-5. Put the nuts back on, finger-tight for now.
-6. Shift the PCB until the button is **centered in its hole** and moves in and out without rubbing. The jack legs have a little play in their holes, which gives you room to adjust.
-7. Snug the nuts down, and check the button again. Don't overtighten: it can strip the jack threads or mark the panel.
+5. Put the nuts back on and hand-tighten them for now.
+6. Use a small pair of pliers to rotate the jack bodies as necessary to align them squarely with each other. This step is optional, but a nice touch.
+7. Shift the PCB until the button is **centered in its hole** and moves in and out without rubbing. The jack legs have a little play in their holes, which gives you room to adjust.
 
 <img src="images/assembly-3-faceplate.svg" alt="Exploded side view: jacks and button on the PCB, the faceplate above them, and the nuts on top" width="720">
 
@@ -72,8 +72,8 @@ Press the cap onto the switch plunger, then push the button a few times to check
 Turn the whole thing over and solder from the back of the PCB.
 
 1. On each jack, solder only the square pad. Then check again that the button is centered and moves freely. If it doesn't, reheat those eight joints and nudge the board.
-2. Use a small pair of pliers to rotate the jacks as necessary to align them squarely with each other. This step is optional, but a nice touch.
-3. Solder the other two pads on each jack (24 jack joints in all).
+2. Solder the other two pads on each jack (24 jack joints in all).
+3. Snug the nuts down. Don't overtighten: it can strip the jack threads or damage the panel.
 
 <img src="images/assembly-4-jacks.svg" alt="Back of the PCB: the eight square pads to tack first are filled red, and the other sixteen jack pads are outlined in red" width="640">
 
