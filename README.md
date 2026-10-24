@@ -37,6 +37,8 @@ hardware/
   panel/                      Faceplate (KiCad 10, made as an aluminum PCB)
     MultipleFaceplate.kicad_pcb  Faceplate layout
     MultipleFaceplate.step       3D model
+  jig/                        3D-printable solder jig (see below)
+    ST-01_Solder_Jig.stl         Holds the jacks and button while you solder
 docs/                         Manual, assembly guide, BOM, images
   pdf/                          PDF versions of the manual and assembly guide
 ```
@@ -53,6 +55,19 @@ The `.github/` folder holds the automation that builds the PDFs. You can ignore 
 ## Sourcing your own parts
 
 The [BOM](docs/BOM.md) lists every part. The jack pads are oval so the board can also take panel-mount style jacks, which may be easier to source. The CUI MJ-3507 is one example: its sleeve is a solder lug rather than a pin, so each one needs a short wire from that lug to the jack's square pad.
+
+## Solder jig (optional)
+
+[`hardware/jig/ST-01_Solder_Jig.stl`](hardware/jig/ST-01_Solder_Jig.stl) is a 3D-printable jig (28 x 112 x 11 mm) that holds the eight jacks and the button square and centred while you solder them. It replaces the faceplate as the alignment guide, so all nine parts can be soldered in one go.
+
+1. Print it in PLA, pockets facing up. It needs no supports.
+2. Take the nuts off the jacks and leave the cap off the button.
+3. Fit the jacks and the button into the front of the PCB, the side with the part outlines, as in the [Assembly Guide](docs/assembly-guide.md). Don't solder anything yet.
+4. Lower the jig over the parts, pockets down, with the end engraved "J1" over J1. Wiggle it until every jack and the button seat into their pockets. Each pocket only fits its part one way round.
+5. Turn the whole stack over so the jig sits on the bench and the back of the PCB (printed "ST-01 v1.1") faces up. Solder all the joints. The board sits 4 mm above the jig, so the plastic stays well clear of the iron.
+6. Lift the board out of the jig, fit the button cap, and continue from the faceplate step of the [Assembly Guide](docs/assembly-guide.md).
+
+The pockets are a close fit (0.1 mm per side). If your printer makes holes small and the jack threads won't drop in, try a slightly larger horizontal-expansion or hole-compensation setting in your slicer.
 
 ## License
 
