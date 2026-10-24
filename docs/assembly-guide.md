@@ -24,11 +24,12 @@ Check your kit against this list before you start (full details in the [BOM](BOM
 - Multimeter with a continuity (beep) mode
 - Small pliers (optional, for squaring up the jacks)
 - Nut driver or wrench for the jack nuts (optional, but less likely to scratch the panel than pliers)
+- 3D-printed solder jig (optional, see [Building with the solder jig](#building-with-the-solder-jig-optional))
 
 ## Before you start
 
 - The jacks and switch go on the **front** of the PCB, the side with the part outlines (J1-J8, SW1). The back is printed "ST-01 v1.1 / Passive Multiple" and "schenktronics.com", and that's the side you solder on.
-- The switch gets soldered first. **Don't solder the jacks until the faceplate is on.** The faceplate holds the jacks in line, and it's how you center the button in its hole.
+- The switch gets soldered first. **Don't solder the jacks until the faceplate is on.** The faceplate holds the jacks in line, and it's how you center the button in its hole. If you have a 3D printer, the [solder jig](#building-with-the-solder-jig-optional) does that job instead, and lets you solder everything in one step.
 
 ### First time soldering?
 
@@ -41,6 +42,19 @@ You only need the basics for this kit:
 - Leaded solder (63/37 or 60/40 tin/lead) is easier to learn with than lead-free: it melts at a lower temperature and flows more easily. Lead-free works fine too, with a slightly hotter iron. Use whichever you prefer.
 - If you use leaded solder, wash your hands when you're done, and don't eat, drink, or smoke while you're soldering. Wipe down your work surface afterward, and keep solder away from kids.
 - Solder somewhere with some airflow, and keep your face to the side of the fumes, not right above them. The fumes primarily come from the flux, not the metals in the solder, but they can irritate your lungs.
+
+## Building with the solder jig (optional)
+
+The jig is a 3D-printable block that holds the eight jacks and the button square and centered while you solder them, in place of the faceplate. Download [ST-01_Solder_Jig.stl](../hardware/jig/ST-01_Solder_Jig.stl) and print it in PLA, pockets facing up, with no supports. It fits the jacks supplied in the kit; panel-mount style jacks won't fit it.
+
+1. Take the nuts off the jacks, and leave the cap off the button.
+2. Push the button and all eight jacks into the front of the PCB, as in Steps 1 and 3. Don't solder anything yet.
+3. Lower the jig over the parts, pockets down, with the end engraved "J1" over J1. Wiggle it until every jack and the button seat into their pockets.
+4. Turn the whole stack over so the jig sits on the bench and the back of the PCB faces up.
+5. Solder all 30 joints. The board sits 4 mm above the jig, so the plastic stays clear of the iron.
+6. Lift the board out of the jig.
+
+Then fit the button cap (Step 2), fit the faceplate and nuts (Step 3), and snug the nuts down. Everything is already soldered and centered, so skip Step 4 and go on to test (Step 5).
 
 ## Step 1: Solder the switch
 

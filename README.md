@@ -58,7 +58,7 @@ The [BOM](docs/BOM.md) lists every part. The jack pads are oval so the board can
 
 ## Solder jig (optional)
 
-[`hardware/jig/ST-01_Solder_Jig.stl`](hardware/jig/ST-01_Solder_Jig.stl) is a 3D-printable jig (28 x 112 x 11 mm) that holds the eight jacks and the button square and centred while you solder them. It replaces the faceplate as the alignment guide, so all nine parts can be soldered in one go.
+[`hardware/jig/ST-01_Solder_Jig.stl`](hardware/jig/ST-01_Solder_Jig.stl) is a 3D-printable jig (28 x 112 x 11 mm) that holds the eight jacks and the button square and centered while you solder them. It replaces the faceplate as the alignment guide, so all nine parts can be soldered in one go.
 
 1. Print it in PLA, pockets facing up. It needs no supports.
 2. Take the nuts off the jacks and leave the cap off the button.
