@@ -51,7 +51,7 @@ The jig is a 3D-printable block that holds the eight jacks and the button square
 2. Push the button and all eight jacks into the front of the PCB, as in Steps 1 and 3. Don't solder anything yet.
 3. Lower the jig over the parts, pockets down, with the end engraved "J1" over J1. Wiggle it until every jack and the button seat into their pockets.
 4. Turn the whole stack over so the jig sits on the bench and the back of the PCB faces up.
-5. Solder all 30 joints. The board sits 4 mm above the jig, so the plastic stays clear of the iron.
+5. Solder all 30 joints. The board sits about 5 mm above the jig, so the plastic stays clear of the iron.
 6. Lift the board out of the jig.
 
 Then fit the button cap (Step 2), fit the faceplate and nuts (Step 3), and snug the nuts down. Everything is already soldered and centered, so skip Step 4 and go on to test (Step 5).
